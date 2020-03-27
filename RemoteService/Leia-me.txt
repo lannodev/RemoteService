@@ -1,0 +1,8 @@
+#instalar pacote
+Install-Package Microsoft.Management.Infrastructure -Version 4.0.0
+
+#Habilitar serviço remoto na maquina
+winrm quickconfig
+
+#Windows 7 Fix Problem
+https://support.microsoft.com/pt-br/help/3049269/windows-management-infrastructure-mi-api-replaces-wmi-net-libraries

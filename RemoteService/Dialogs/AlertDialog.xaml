@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="RemoteService.Dialogs.AlertDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RemoteService.Dialogs"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="250" d:DesignWidth="250" Background="{DynamicResource Background}">
+    <Grid>
+
+        <StackPanel Grid.Row="3" Margin="20">
+            
+            <TextBlock x:Name="Title" Foreground="{DynamicResource Secondary}" TextWrapping="Wrap"/>
+
+            <StackPanel Margin="0 20" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                <Button Foreground="{DynamicResource Secondary}"
+                        x:Name="ExecuteButton"
+                        Width="90"
+                        IsDefault="True"
+                        Margin="0 0 10 0"
+                        Background="Transparent"
+                        BorderBrush="{DynamicResource Secondary}"
+                        Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+                        Content="ok"
+                        Command="materialDesign:DialogHost.CloseDialogCommand">
+
+                    <Button.CommandParameter>
+                        <system:Boolean xmlns:system="clr-namespace:System;assembly=mscorlib">
+                            True
+                        </system:Boolean>
+                    </Button.CommandParameter>
+
+                </Button>
+
+                <Button Foreground="{DynamicResource Secondary}" 
+                        Width="90" 
+                        Background="Transparent"
+                        BorderBrush="{DynamicResource Secondary}"
+                        Style="{StaticResource MaterialDesignFlatAccentBgButton}"
+                        Content="Cancelar"
+                        IsCancel="True"
+                        Command="materialDesign:DialogHost.CloseDialogCommand">
+
+                    <Button.CommandParameter>
+                        <system:Boolean xmlns:system="clr-namespace:System;assembly=mscorlib">
+                            False
+                        </system:Boolean>
+                    </Button.CommandParameter>
+
+                </Button>
+                    
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>
